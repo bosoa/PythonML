@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from sklearn import svm, preprocessing
 import pandas as pd
 from matplotlib import style
@@ -46,9 +46,9 @@ FEATURES = ['DE Ratio',
 def Build_Data_Set():
         data_df = pd.DataFrame.from_csv("key_stats.csv")
 
-        # data_df = data_df[:100]
+        data_df = data_df[:100]
 
-        X = np.array(data_df[FEATURES].values)  # .tolist())
+        X = np.array(data_df[FEATURES].values).tolist()
 
         y = (data_df["Status"]
              .replace("underperform", 0)
